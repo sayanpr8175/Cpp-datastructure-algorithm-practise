@@ -24,7 +24,8 @@ void merge(int a[], int startIndex, int endIndex){
 			arr[k] = a[i]; k++; i++;
 			arr[k] = a[j]; k++; j++;
 		}
-		
+	}
+	
 		while(i<=mid){
 			arr[k] = a[i];
 			k++; i++;
@@ -38,11 +39,7 @@ void merge(int a[], int startIndex, int endIndex){
 		for(int i=startIndex; i<=endIndex; i++){
 			a[i] = arr[i];
 		}
-		
-	}
-	
-	
-	
+
 }
 
 void mergeSort(int a[], int startIndex, int endIndex){
@@ -66,9 +63,25 @@ void mergeSortPass(int a[], int size){
 		return;
 	}
 	
-	mergeSort(a, 0, size);
+	mergeSort(a, 0, size-1);
 }
 
 int main(){
+	cout << "Enter the size of the array " << endl;
+	int size;
+	cin >> size;
+	int * arr = new int[size];
+	cout << "enter elements in the array " << endl;
+	for(int i=0; i<size; i++){
+		cin >> arr[i];
+	}
+	
+	mergeSortPass(arr, size);
+	
+	cout << endl;
+	
+	for(int i=0; i<size; i++){
+		cout << arr[i] << " ";
+	}
 	
 }
