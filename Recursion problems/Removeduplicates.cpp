@@ -15,4 +15,44 @@
 using namespace std;
 
 
+// returns length of a string
+int length(char str[]){
+	int count = 0;
+	for(int i=0; str[i]!='\0'; i++){
+		count++;
+	}
+	return count;
+}
+
+// removes consecutive duplicates element
+void removeConsDup(char strng[]){
+	
+	// Base case
+	if(strng[0]=='\0'){
+		return;
+	}
+	
+	// Induction / assume recursion has done the work
+	removeConsDup(strng+1);
+	
+	// small calculation
+	if(strng[0]==strng[1]){
+		for(int i=1; i<=length(strng); i++){
+			strng[i] = strng[i+1];
+		}
+	}
+}
+
+int main(){
+	
+	cout << "Enter the string (max limit - 100)" << endl;	
+	char str[100];
+	cin >> str;
+	
+	removeConsDup(str);
+	
+	cout << str << endl;
+	
+}
+
 
