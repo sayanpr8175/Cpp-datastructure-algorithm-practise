@@ -69,6 +69,10 @@ void QsHelper(int input[], int si, int ei){
 		return;
 	}
 	int c = partition(input, si, ei);
+	
+	// after a random element is positioned at it's correct place 
+	// then calling recursion before and after consecutively.
+	
 	QsHelper(input, si, c-1);
 	QsHelper(input, c+1, ei);
 }
