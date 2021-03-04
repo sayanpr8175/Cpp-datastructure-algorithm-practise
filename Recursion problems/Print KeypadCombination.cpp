@@ -16,11 +16,8 @@
 				bf
 				cd
 				ce
-				cf
-
-	
+				cf	
 */
-
 
 #include<iostream>
 using namespace std;
