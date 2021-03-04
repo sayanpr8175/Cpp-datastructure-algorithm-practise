@@ -23,17 +23,24 @@ using namespace std;
 
 int returnKeypad(int n, string output[]){
 	
+	// Key corresponding to specific number
+	
 	string map[] = {"","","abc","def","ghi","jkl","mno","pqrs","tuv","wxyz"};
+	
+	// base case 
+	
 	if(n==0){
 		output[0] = "";
 		return 1;}
+		
+	// Empty array is sent for recursion for go and fill it out for the other digits
 	
 	string smallOutputAr[1000];
 	int smallOutputSize = returnKeypad(n/10, smallOutputAr);
 	
-	int val = n%10;
-	int stringSize = map[val].size();
-	string ch = map[val];
+	int val = n%10;  // 23%10 = 2
+	int stringSize = map[val].size(); // size of the selected key
+	string ch = map[val];   // string from location index-2 of map
 	
 	int k = 0;
 	
