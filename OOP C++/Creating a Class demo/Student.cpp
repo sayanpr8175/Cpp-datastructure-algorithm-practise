@@ -1,6 +1,8 @@
 class Student{
-	int rollNumber;
-	int age;
+	
+	public:
+		int rollNumber;
+		int age;
 };
 
 
