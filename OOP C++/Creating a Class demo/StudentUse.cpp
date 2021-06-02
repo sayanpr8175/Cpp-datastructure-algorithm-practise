@@ -15,6 +15,10 @@ int main(){
 	
 	cout << s1.age << endl;
 	cout << s1.rollNumber << endl;
+	s1.display();
+	
+	s1.setValue(78);
+	cout <<"S1 Value " <<s1.getValue() << endl;
 	
 	// Create object dynamically
 	
@@ -25,14 +29,11 @@ int main(){
 	
 	cout << (*s6).rollNumber << endl;
 	cout << (*s6).age << endl;
+	(*s6).display();
 	
 	
 	s6->rollNumber = 204;
 	s6->age = 14;
-	
-	
-	
-	
-	
+	s6->display();
 	
 }
